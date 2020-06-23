@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
   def drake_made_this
     all_artist = Artist.all.map {|a| a.name}
     if all_artist.include? "Drake"
-      self.artist = drake
+      return true
     elsif
       drake =  Artist.create(name: "Drake")
       self.artist = drake
